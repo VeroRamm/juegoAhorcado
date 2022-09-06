@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <!--Conexion con la hoja de estilo RESET-->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!--Conexion con la hoja de estilo-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--Conexion a FontAwesone-->
+    <script src="https://kit.fontawesome.com/893ca4dba1.js" crossorigin="anonymous"></script>
+    <!--Animacion-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+</head>
+<body>
+    <!--Cabecera con  el logo-->
+    <header>
+        <img src="./imagenes/Frame 4.svg" alt="" class="logo">
+    </header>
+    <main>
+        <!--Layout Inicio del juego-->
+        <section class="inicio" id="inicio">
+            <input type="button" value="Iniciar Juego" class="btnIniciar" id="btnIniciar">
+            <input type="button" value="Agregar Nueva Palabra" class="btnAgregar" id="btnAgregar">
+        </section>
+        <!--Layout agregar palabra-->
+        <section class="agregarPalabra" id="agregarPalabra">
+            <form>
+                <input type="text" placeholder="Ingrese una palabra" class="sumarPalabra" id="sumarPalabra">
+                <p><i class="fa-solid fa-circle-exclamation"></i> Máx. de 8 letras, no usar espacios.</p>
+                <input type="button" value="Guardar y empezar" class="btnGuardar" id="btnGuardar">
+                <input type="button" value="Cancelar" class="btnCancelar" id="btnCancelar">
+            </form>
+
+        </section>
+        <!--Layout del juego-->
+        <section class="ahorcado" id="ahorcado">
+            <div class="imagen" id="imagen">
+                <canvas width="500" height="400"></canvas>
+            </div>
+            <div class="error" id="error"></div>
+            <div class="acerto" id='acerto'></div>
+            <div class="palabra" id="palabraElegida">
+                <span>_</span><span>_</span><span>_</span><span>_</span>
+            </div>
+            <div class="letras" id="letras">
+                <button>A</button>
+                <button>B</button>
+                <button>C</button>
+                <button>D</button>
+                <button>E</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>I</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+                <button>M</button>
+                <button>N</button>
+                <button>Ñ</button>
+                <button>O</button>
+                <button>P</button>
+                <button>Q</button>
+                <button>R</button>
+                <button>S</button>
+                <button>T</button>
+                <button>U</button>
+                <button>V</button>
+                <button>W</button>
+                <button>X</button>
+                <button>Y</button>
+                <button>Z</button>
+            </div>  
+        </section>
+        <section class="btnAhorcado" id="btnAhorcado">
+            <input type="button" value="Nuevo juego" class="btnNuevo" id="btnNuevo">
+            <input type="button" value="Desistir" class="btnSalir" id="btnSalir">
+        </section>
+    </main>
+    <!--Footer-->
+    <footer>
+        <p>Realizado por Maria Veronica Trias</p>
+        <P>One-Next Education</P>
+        <p>Alura Latam</p>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+*{
+    background-color: #F3F5FC;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    margin-top: 25px;
+    height: 40px;
+    width: 130px;           
+}
+.inicio, .agregarPalabra, form, .ahorcado {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.btnIniciar, .btnGuardar{
+    height: 114px;
+    width: 317px;
+    margin-top:10%;
+    margin-bottom: 25px;
+    border-radius: 24px;
+    padding: 24px;
+    background-color:#0A3871;
+    color: #fff;
+    font-size:20px;
+
+}
+.btnAgregar, .btnCancelar, .btnSalir{
+    height: 67px;
+    width: 280px;
+    border-radius: 24px;
+    padding: 24px;
+    color: #0A3871;
+    font-size:15px;
+    margin-bottom:10%;
+    font-weight:bold;
+}
+.sumarPalabra{
+    width: 300px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    color:#02234e;
+    font-weight:bold;
+    margin: 60px 10px 30px;
+    padding: 10px;
+   
+    text-decoration: none;
+    list-style: none;
+}
+
+.palabra span{
+    display:inline-block;
+    width:40px;
+    height:20px;
+    border-bottom: 3px solid #02234e;
+    text-align: center;
+    margin-right: 6px;
+    margin-bottom: 10px;
+    font-weight:bold;
+    font-size: 25px;
+    
+}
+.letras{
+    margin: 10px;
+    width: 800px;
+   text-align: center;
+}
+.letras button{
+    font-size: 30px;
+    font-weight: bold;
+    margin:5px;
+    text-align: center;
+    background-color:#8fb7e9;
+    color:rgb(36, 35, 35);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.btnAhorcado{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px; 
+}
+.error{
+    color:#c42015;
+    text-align: center;
+    position: fixed;
+    font-size:40px; 
+}
+.acerto{
+    color:rgb(70, 238, 140);
+    text-align: center;
+    position: fixed;
+    font-size:40px; 
+}
+.btnNuevo{
+    height: 67px;
+    width: 280px;
+    border-radius: 24px;
+    padding: 24px;
+    background-color:#0A3871;
+    color: #fff;
+    font-size:15px;
+}
+footer{
+    text-align: center;
+    font-size:15px;
+    font-weight:bold;
+    font-family: sans-serif;
+    
+}
