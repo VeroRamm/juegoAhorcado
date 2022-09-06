@@ -122,12 +122,22 @@ footer{
 @media only screen and (max-width: 400px) {
     .imagen{
         width:250px;
+       
     }
     .letras{
-        width: 300px;
+        width: 200px;
     }
     .letras button{
         font-size: 15px;
+    }
+    .btnNuevo, .btnSalir{
+    width:180px;
+    }
+    .btnIniciar, .btnGuardar{
+        width: 250px;
+    }
+    .btnAgregar, .btnCancelar{
+        width: 200px;
     }
 }
 
