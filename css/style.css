@@ -119,3 +119,29 @@ footer{
     font-family: sans-serif;
     
 }
+@media only screen and (max-width: 400px) {
+    .imagen{
+        width:250px;
+    }
+    .letras{
+        width: 300px;
+    }
+    .letras button{
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 1024px) {
+    .imagen{
+        width:250px;
+    }
+    .letras{
+        width: 400px;
+    }
+    .letras button{
+        font-size: 15px;
+    }
+    .error, .acerto{
+        font-size: 30px;
+    }
+}
