@@ -101,42 +101,21 @@ function letraClick(event){
    }
    if (acerto == false){
       errores++;
-      dibujar();  
+      const dibujo = dibujarAhorcado[errores]
+      ? dibujarAhorcado[errores]() : errores =10;
+      if (errores ==10){
+         erro.innerHTML = "Te equivocaste la palabra es " + palabraElegida;
+      }
       console.log(errores);
+      console.log(dibujo);
    }else if (aciertos == palabraElegida.length){
-      gano.innerHTML = "Felicitaciones!! Ganaste!!!";
-      
+      gano.innerHTML = "Felicitaciones!! Ganaste!!!";  
    }
 }
 function error(){
    if (errores =10){
    erro.innerHTML = "Te equivocaste la palabra es " + palabraElegida;
 }
-}
-function dibujar(){
-   switch(errores){
-      case 1: poste();
-            break;
-      case 2: cabeza();
-            break;
-      case 3: cuerpo();
-            break;
-      case 4: braDerecho();
-            break;
-      case 5: braIzquierdo();
-            break;
-      case 6: pieDerecho();
-            break;
-      case 7: pieIzquierdo();
-            break;
-      case 8: ojoDerecho();
-            break;
-      case 9: ojoIzquierdo();
-            break;
-      default:  error();
-      break;   
-   }
-   
 }
 //funcion del reiniciar juego// juego nuevo
 function reinicio(){
@@ -151,90 +130,83 @@ function reinicio(){
    }
 }
 btnNuevo.addEventListener('click', reinicio);
-
-//LOGICA DEL CANVAS
-// Poste
-const poste=()=> {
-   pincel.beginPath();
-   pincel.moveTo(150,100); //mastil final
-   pincel.lineTo(150,50);
-   pincel.lineTo(0,50);
-   pincel.lineTo(0,350);// mastil largo
-   //pincel.moveTo(300,360);
-   pincel.lineTo(200,350);// base
-   pincel.lineWidth = 20;
-   pincel.stroke();
-   pincel.closePath();
-}
-//cabeza
-function cabeza() {
-   pincel.beginPath();
-   pincel.arc(150, 140, 40, 0, Math.PI * 2);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath();
-}
-//cuerpo
-function cuerpo() { 
-   pincel.moveTo(150,180);
-   pincel.lineTo(150,250);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath();
-}
-//brazos izquierdo
-function braIzquierdo() {
-   pincel.beginPath();
-   pincel.moveTo(180,220);
-   pincel.lineTo(150,180);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath();
-}
-//brazo derecho
-function braDerecho() {
-   pincel.beginPath();
-   pincel.moveTo(120,220);
-   pincel.lineTo(150,180);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath();
-}
-//pierna izquierda
-function pieIzquierdo() {
-   pincel.beginPath();
-   pincel.moveTo(150,250);
-   pincel.lineTo(180,290);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath(); 
-}
-//pierna derecha
-function pieDerecho(){
-   pincel.beginPath();
-   pincel.moveTo(120,290);
-   pincel.lineTo(150,250);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath();
-}
-function ojoIzquierdo(){
-   pincel.beginPath();
-   pincel.moveTo(125,120);
-   pincel.lineTo(145,145);
-   pincel.moveTo(145,120);
-   pincel.lineTo(125,145);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath();
-}
-function ojoDerecho(){
-   pincel.beginPath();
-   pincel.moveTo(155,120);
-   pincel.lineTo(175,145);
-   pincel.moveTo(175,120);
-   pincel.lineTo(155,145);
-   pincel.lineWidth = 5;
-   pincel.stroke();
-   pincel.closePath();
-}
+// LOGICA DEL CANVAS
+const dibujarAhorcado = {
+      1:()=> {// poste
+         pincel.beginPath();
+         pincel.moveTo(150,100); //mastil final
+         pincel.lineTo(150,50);
+         pincel.lineTo(0,50);
+         pincel.lineTo(0,350);// mastil largo
+         pincel.lineTo(200,350);// base
+         pincel.lineWidth = 20;
+         pincel.stroke();
+         pincel.closePath();
+      },
+      2:()=>{// cabeza
+         pincel.beginPath();
+         pincel.arc(150, 140, 40, 0, Math.PI * 2);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath();
+      },
+      3:()=>{// cuerpo
+         pincel.moveTo(150,180);
+         pincel.lineTo(150,250);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath();
+      },
+      4:()=>{//brazo izquierdo
+         pincel.beginPath();
+         pincel.moveTo(180,220);
+         pincel.lineTo(150,180);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath();
+      },
+      5:()=>{// brazo Derecho
+         pincel.beginPath();
+         pincel.moveTo(120,220);
+         pincel.lineTo(150,180);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath();
+      },
+      6:()=>{// pie izquierdo
+         pincel.beginPath();
+         pincel.moveTo(150,250);
+         pincel.lineTo(180,290);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath(); 
+      },
+      7:()=>{// pie derecho
+         pincel.beginPath();
+         pincel.moveTo(120,290);
+         pincel.lineTo(150,250);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath();
+      },
+      8:()=>{// ojo izquierdo
+         pincel.beginPath();
+         pincel.moveTo(125,120);
+         pincel.lineTo(145,145);
+         pincel.moveTo(145,120);
+         pincel.lineTo(125,145);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath();
+      },
+      9:()=>{// ojo derecho
+         pincel.beginPath();
+         pincel.moveTo(155,120);
+         pincel.lineTo(175,145);
+         pincel.moveTo(175,120);
+         pincel.lineTo(155,145);
+         pincel.lineWidth = 5;
+         pincel.stroke();
+         pincel.closePath();
+      }
+   } 
